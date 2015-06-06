@@ -5,6 +5,6 @@ for pid in $PID; do kill $pid;done
 export HOME=$PWD
 source .env
 mkdir -p ./work
-
-[ ! -f /usr/local/bin/codebox ] && npm install codebox -g
-/usr/local/bin/codebox -p 9080 -u $account run ./work 2>&1 > ./log/code.log &
+nvm use
+[ ! -f /home/www/.nvm/v0.10.25/bin/codebox ] && npm install codebox -g
+/home/www/.nvm/v0.10.25/bin/codebox -p 8080 -u $account run $PWD/work 2>&1 > $PWD/log/code.log &
